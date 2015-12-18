@@ -19,4 +19,12 @@ describe('roles', () => {
       done();
     });
   });
+  it('revoke a role from a user', done => {
+    nock('https://webapp.kotive.com/api').delete('/personRoles/392').basicAuth({user: 'jenkins.daniel.02@gmail.com', pass: '123456'}).reply(200);
+    const client = new Client('jenkins.daniel.02@gmail.com', '123456').usePromises();
+    client.roles.revoke(392).then(r => {
+      assert.equal(200, r.status);
+      done();
+    });
+  });
 });
