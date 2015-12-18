@@ -8,6 +8,10 @@ describe('clients', () => {
     assert.equal('foo', client.user);
     assert.equal('bar', client.pass);
   });
+  it('enable promises', () => {
+    const client = new Client('foo', 'bar').usePromises();
+    assert.equal(true, client.promises);
+  });
   // it('ping', done => {
   //   nock('https://api.intercom.io').get('/admins').reply(200, {});
   //   const client = new Client('foo', 'bar');
