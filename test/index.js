@@ -5,8 +5,8 @@ import {Client} from '../lib';
 describe('clients', () => {
   it('should be constructed', () => {
     const client = new Client('foo', 'bar');
-    assert.equal('foo', client.user);
-    assert.equal('bar', client.pass);
+    assert.equal('foo', client.username);
+    assert.equal('bar', client.password);
   });
   it('enable promises', () => {
     const client = new Client('foo', 'bar').usePromises();
