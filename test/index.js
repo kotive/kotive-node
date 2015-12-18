@@ -16,4 +16,8 @@ describe('clients', () => {
       done();
     });
   });
+  it('enable promises', () => {
+    const client = new Client('foo', 'bar').usePromises();
+    assert.equal(true, client.promises);
+  });
 });
