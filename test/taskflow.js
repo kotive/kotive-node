@@ -11,10 +11,18 @@ describe('taskflows', () => {
       done();
     });
   });
-  it('start a new taskflow', done => {
+  it('get a taskflow template', done => {
     nock('https://webapp.kotive.com/api').get('/group/246/process/798/blank').basicAuth({user: 'jenkins.daniel.02@gmail.com', pass: '123456'}).reply(200);
     const client = new Client('jenkins.daniel.02@gmail.com', '123456').usePromises();
-    client.taskflow.start(246, 798).then(r => {
+    client.taskflow.getTemplate(246, 798).then(r => {
+      assert.equal(200, r.status);
+      done();
+    });
+  });
+  it('start a taskflow instance', done => {
+    nock('https://webapp.kotive.com/api').post('/group/246/process', {id_process: 0, id_t: 798, id_owning_process: -1, fields: []}).basicAuth({user: 'jenkins.daniel.02@gmail.com', pass: '123456'}).reply(200);
+    const client = new Client('jenkins.daniel.02@gmail.com', '123456').usePromises();
+    client.taskflow.startInstance(246, {id_process: 0, id_t: 798, id_owning_process: -1, fields: []}).then(r => {
       assert.equal(200, r.status);
       done();
     });
