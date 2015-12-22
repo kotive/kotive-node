@@ -3,8 +3,7 @@ import {Client} from '../lib';
 import nock from 'nock';
 
 describe('auth', () => {
-  it('should be able to login', function (done) {
-    this.timeout(10000);
+  it('should be able to login', done => {
     nock('https://webapp.kotive.com/api').get('/login').basicAuth({user: 'jenkins.daniel.02@gmail.com', pass: '123456'}).reply(200);
     const client = new Client('jenkins.daniel.02@gmail.com', '123456').usePromises();
     client.auth.login().then(r => {
@@ -12,8 +11,7 @@ describe('auth', () => {
       done();
     });
   });
-  it('password should be reset', function (done) {
-    this.timeout(10000);
+  it('password should be reset', done => {
     nock('https://webapp.kotive.com/api').post('/user/resetpassword', {email: 'jenkins.daniel.02@gmail.com'}).reply(200, 'OK');
     const client = new Client('jenkins.daniel.02@gmail.com', '123456').usePromises();
     client.auth.passwordReset({

@@ -5,8 +5,8 @@ import nock from 'nock';
 describe('clients', () => {
   it('should be constructed', () => {
     const client = new Client('foo', 'bar');
-    assert.equal('foo', client.user);
-    assert.equal('bar', client.pass);
+    assert.equal('foo', client.username);
+    assert.equal('bar', client.password);
   });
   it('ping', done => {
     nock('https://webapp.kotive.com/api').get('/areyouthere').reply(200, 'OK');
