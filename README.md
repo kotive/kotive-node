@@ -4,7 +4,7 @@
 ## Installation
 
 ```bash
-npm install kotive-client
+npm install kotive
 ```
 
 ## Testing
@@ -32,7 +32,7 @@ var Kotive = require('./dist/index');
 Require Kotive:
 
 ```node
-var Kotive = require('kotive-client');
+var Kotive = require('kotive');
 ```
 
 Create a client:

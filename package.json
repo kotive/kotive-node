@@ -1,5 +1,5 @@
 {
-  "name": "kotive-client",
+  "name": "kotive",
   "version": "1.0.0",
   "description": "Official Node bindings to the Kotive API",
   "homepage": "https://github.com/kotive/kotive-node",
@@ -15,7 +15,9 @@
   "main": "dist/index.js",
   "keywords": [
     "kotive",
-    "api"
+    "api",
+    "workflow",
+    "taskflow"
   ],
   "dependencies": {
     "babel-eslint": "^4.1.3",
