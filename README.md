@@ -21,7 +21,7 @@ Compile using babel:
 gulp babel
 ```
 
-Require Intercom:
+Require Kotive:
 
 ```node
 var Kotive = require('./dist/index');
@@ -29,7 +29,7 @@ var Kotive = require('./dist/index');
 
 ## Usage
 
-Require Intercom:
+Require Kotive:
 
 ```node
 var Kotive = require('kotive-client');
